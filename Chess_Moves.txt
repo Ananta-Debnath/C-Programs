@@ -1,0 +1,12 @@
+1. h4 a5 2. h5 a4 3. h6 a3 4. hxg7 axb2 5. gxh8=Q bxa1=N
+
+h4
+a5
+h5
+a4
+h6
+a3
+hxg7
+axb2
+gxh8=Q
+bxa1=N

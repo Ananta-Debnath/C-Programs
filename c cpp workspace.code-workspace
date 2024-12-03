@@ -1,0 +1,21 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "launch": {
+        "version": "0.2.0",
+        "configurations": []
+    },
+    "settings": {
+        "debug.console.closeOnEnd": false,
+        "debug.hideLauncherWhileDebugging": false,
+        "debug.internalConsoleOptions": "openOnFirstSessionStart",
+        "launch": {
+
+            "configurations": [],
+            "compounds": []
+        }
+    }
+}
