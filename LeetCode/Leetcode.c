@@ -210,11 +210,81 @@ char* compressedString(char* word) {
 
 
 
+int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSize) 
+{
+    int row = matrixSize;
+    int col = *matrixColSize;
+    int total = row*col;
+    *returnSize = total;
+    int* ans = calloc(total, sizeof(int));
+    int i = 0, j = 0, di = 0, dj = 1, n = 1;
+    int i0 = 0, j0 = 0;
+    ans[0] = matrix[0][0];
+
+    while (n < total)
+    {
+        if (di == -1 && i == i0)
+        {
+            di = 0;
+            dj = 1;
+            j0++;
+        }
+
+        else if (di == 1 && i == row-1)
+        {
+            di = 0;
+            dj = -1;
+            col--;
+        }
+        
+        else if (dj == -1 && j == j0)
+        {
+            dj = 0;
+            di = -1;
+            row--;
+        }
+        
+        else if (dj == 1 && j == col-1)
+        {
+            dj = 0;
+            di = 1;
+            i0++;
+        }
+
+        i += di;
+        j += dj;
+
+        ans[n] = matrix[i][j];
+        n++;
+    }
+    return ans;
+}
+
 
 
 
 
 /*
+int main()
+{
+    int** arr;
+    arr = malloc(3 * sizeof(int*));
+    for (int i = 0; i < 3; i++) arr[i] = malloc(3 * sizeof(int));
+    
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            arr[i][j] = 3*i + j;
+        }
+    }
+    int k = 3, n;
+    int* ans = spiralOrder(arr, 3, &k, &n);
+
+    for (int i = 0; i < n; i++) printf("%d\n", ans[i]);
+}
+
+
 int main()
 {
     char word[] = "abcde";

@@ -5,6 +5,7 @@
 #include <string.h>
 
 
+
 int main(){
     clock_t start1, end;
     double cpu_time_used;
@@ -12,9 +13,7 @@ int main(){
 
 
 
-    int a = 0xA34D23;
-    printf("%d\n", a);
-    printf("%X\n", a);
+    
 
 
 
