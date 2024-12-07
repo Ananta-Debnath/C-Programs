@@ -76,6 +76,23 @@ int merge_sort(int list[], int l)
     return 0;
 }
 
+int binary_search(int* a, int l, int t)
+{
+    int first=0, last=l-1, mid, idx = -1;
+    while(first<=last)
+    {
+        mid = (first + last)/2;
+        if(a[mid]<t) first = mid + 1;
+        else if(a[mid]>t) last = mid -1;
+        else
+        {
+            idx = mid;
+            break;
+        }
+    }
+    return idx;
+}
+
 int find_gcd(int a, int b) {
     if(a < b)
     {
@@ -162,3 +179,4 @@ int time_count()
     printf("Execution time: %f seconds\n", cpu_time_used);
     return 0;
 }
+

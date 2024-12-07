@@ -209,7 +209,6 @@ char* compressedString(char* word) {
 }
 
 
-
 int* spiralOrder(int** matrix, int matrixSize, int* matrixColSize, int* returnSize) 
 {
     int row = matrixSize;
