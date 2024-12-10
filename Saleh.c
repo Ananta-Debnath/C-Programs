@@ -1,39 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
-int* square(int x)
-{
-    int* result = malloc(sizeof(int));
-    *result = x * x;
-    return result;
-}
-
-int binary_search(int* a, int l, int t)
-{
-    int first=0, last=l-1, mid, index = -1;
-    while(first<=last)
-    {
-        mid = (first + last)/2;
-        if(a[mid]<t) first = mid + 1;
-        else if(a[mid]>t) last = mid -1;
-        else
-        {
-            index = mid;
-            break;
-        }
-    }
-    return index;
-}
 
 int main()
 {
-    int a[] = {1,4,6,9,11,13,14,16,17,18,20,22};
-    int n = 12;
-    int t = 17;
+    char* str = malloc(1024 * sizeof(char));
+    gets(str);
 
-    int idx = binary_search(a, n, t);
-    printf("%d", idx);
+    int start = 0, l = 0, idx = 0;
+    int n = strlen(str);
 
-    return 0;
+    for (int i = 0; i <= n; i++)
+    {
+        if (str[i] == ' ' || str[i] == 0)
+        {
+            if (l < (i - start))
+            {
+                l = i - start;
+                idx = start;
+            }
+            str[i] = 0;
+            start = i + 1;
+        }
+    }
+
+    char* ans = malloc((l+1) * sizeof(char));
+    for(int i = 0; i <= l; i++) ans[i] = str[idx + i];
+
+    printf("%s", ans);
+    free(str);
 }

@@ -183,13 +183,13 @@ int Multiply()
     {
         int row = c_mat_dim[0][0];
         int column = c_mat_dim[1][1];
-        int elemants = c_mat_dim[0][1];
+        int elements = c_mat_dim[0][1];
         double answer[row][column];
 
         for (int i = 0; i < row; i++){
             for (int j = 0; j < column; j++){
                 answer[i][j] = 0;
-                for (int k = 0; k < elemants; k++){
+                for (int k = 0; k < elements; k++){
                     answer[i][j] += c_mat[0][i][k] * c_mat[1][k][j];
                 }
                 printf("  %.2f   ", answer[i][j]);

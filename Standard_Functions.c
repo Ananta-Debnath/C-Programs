@@ -25,7 +25,7 @@ int selection_sort(int* a, int l)
     return 0;
 }
 
-int merge(int left[], int a, int right[], int b)
+int merge(int* left, int a, int* right, int b)
 {
     int i=0, j=0;
     int l = a+b;
@@ -62,7 +62,7 @@ int merge(int left[], int a, int right[], int b)
     return 0;
 }
 
-int merge_sort(int list[], int l)
+int merge_sort(int* list, int l)
 {
     if(l == 1)
     {
